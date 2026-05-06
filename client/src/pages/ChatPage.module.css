@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    background: #070b14;
+    overflow: hidden;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(ellipse at top,
+            rgba(139, 92, 246, 0.04) 0%,
+            transparent 60%);
+}

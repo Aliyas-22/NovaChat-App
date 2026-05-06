@@ -1,0 +1,278 @@
+.row {
+    display: flex;
+    padding: 3px 20px;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mine {
+    justify-content: flex-end;
+}
+
+.theirs {
+    justify-content: flex-start;
+}
+
+.bubbleWrap {
+    position: relative;
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble {
+    padding: 11px 16px;
+    border-radius: 22px;
+    word-break: break-word;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* ✨ Sent messages - beautiful gradient */
+.bubbleMine {
+    background: linear-gradient(135deg, #ff857a 0%, #ebaee6 100%);
+    border-bottom-right-radius: 5px;
+    color: white;
+    box-shadow:
+        0 4px 20px rgba(255, 133, 122, 0.35),
+        0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+/* ✨ Received messages - soft mint green */
+.bubbleTheirs {
+    background: linear-gradient(135deg,
+            rgba(173, 235, 179, 0.35) 0%,
+            rgba(173, 235, 179, 0.2) 100%);
+    border: 1.5px solid rgba(173, 235, 179, 0.6);
+    border-bottom-left-radius: 5px;
+    color: #2d1b3d;
+    box-shadow: 0 2px 12px rgba(173, 235, 179, 0.2);
+}
+
+.deleted {
+    opacity: 0.5;
+}
+
+.text {
+    font-size: 14px;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.deletedText {
+    font-style: italic;
+}
+
+.deletedLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.image {
+    max-width: 260px;
+    max-height: 200px;
+    border-radius: 14px;
+    display: block;
+    margin-bottom: 6px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fileLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fileLink:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ✅ FIXED — timestamp readable on both bubbles */
+.meta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+/* Sent message time — dark enough to read on pink */
+.bubbleMine .meta {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.time {
+    font-size: 11px;
+    font-weight: 500;
+    /* Default for received */
+    color: #a082b0;
+}
+
+/* Override for sent messages */
+.bubbleMine .time {
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.readTick {
+    display: flex;
+    align-items: center;
+}
+
+/* Action bar */
+.actions {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: white;
+    border: 1px solid rgba(235, 174, 230, 0.35);
+    border-radius: 20px;
+    padding: 5px 10px;
+    z-index: 10;
+    box-shadow:
+        0 8px 24px rgba(255, 133, 122, 0.15),
+        0 2px 8px rgba(235, 174, 230, 0.2);
+    white-space: nowrap;
+}
+
+.actionsLeft {
+    right: 0;
+}
+
+.actionsRight {
+    left: 0;
+}
+
+.actionBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    color: #a082b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: all 0.15s;
+}
+
+.actionBtn:hover {
+    background: rgba(255, 133, 122, 0.12);
+    color: #ff857a;
+    transform: scale(1.1);
+}
+
+/* Quick emoji picker */
+.quickEmoji {
+    position: absolute;
+    top: -50px;
+    display: flex;
+    gap: 4px;
+    background: white;
+    border: 1px solid rgba(235, 174, 230, 0.35);
+    border-radius: 24px;
+    padding: 7px 12px;
+    z-index: 20;
+    box-shadow: 0 8px 28px rgba(255, 133, 122, 0.2);
+}
+
+.quickEmojiLeft {
+    right: 0;
+}
+
+.quickEmojiRight {
+    left: 0;
+}
+
+.emojiBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: transparent;
+    transition: all 0.15s;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji",
+        "Noto Color Emoji", sans-serif;
+}
+
+.emojiBtn:hover {
+    background: rgba(255, 133, 122, 0.1);
+    transform: scale(1.25);
+}
+
+/* Reactions */
+.reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+}
+
+.reactionsLeft {
+    justify-content: flex-end;
+}
+
+.reactionsRight {
+    justify-content: flex-start;
+}
+
+.reaction {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: white;
+    border: 1.5px solid rgba(235, 174, 230, 0.4);
+    border-radius: 14px;
+    padding: 4px 10px;
+    font-size: 15px;
+    color: #2d1b3d;
+    transition: all 0.15s;
+    cursor: pointer;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(235, 174, 230, 0.2);
+    font-family: "Apple Color Emoji", "Segoe UI Emoji",
+        "Noto Color Emoji", sans-serif;
+}
+
+.reaction:hover {
+    border-color: #ff857a;
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 133, 122, 0.2);
+}
+
+.reactionCount {
+    font-size: 11px;
+    color: #ff857a;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}

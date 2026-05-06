@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --nova-bg: #fdf0f8;
+  --nova-surface: rgba(255, 255, 255, 0.85);
+  --nova-border: rgba(235, 174, 230, 0.3);
+  --nova-green: #adebb3;
+  --nova-green-dark: #7dd987;
+  --nova-pink: #ff857a;
+  --nova-pink-light: #ffb3ad;
+  --nova-lavender: #ebaee6;
+  --nova-lavender-dark: #d87fd1;
+  --nova-yellow: #ffd166;
+  --nova-text: #2d1b3d;
+  --nova-text-muted: #6b4d7a;
+  --nova-text-dim: #a082b0;
+  --nova-online: #adebb3;
+  --nova-error: #ff857a;
+  --grad-primary: linear-gradient(135deg, #ff857a, #ebaee6);
+  --grad-green: linear-gradient(135deg, #adebb3, #06d6a0);
+  --grad-bg: linear-gradient(135deg, #fff0f9 0%, #f0fff4 50%, #f5f0ff 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--grad-bg);
+  color: var(--nova-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(235, 174, 230, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff857a, #ebaee6);
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input,
+textarea {
+  outline: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
