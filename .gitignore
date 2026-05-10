@@ -19,4 +19,4 @@ Thumbs.db
 
 # Uploads folder
 /server/uploads/*
-!/server/uploads/.gitkeep
+!/server/uploads/.gitkeepterraform/terraform.tfvars
