@@ -22,25 +22,13 @@ spec:
             - containerPort: 5000
           env:
             - name: NODE_ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: novachat-config
-                  key: NODE_ENV
+              value: "production"
             - name: PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: novachat-config
-                  key: PORT
+              value: "5000"
             - name: MONGO_URI
-              valueFrom:
-                configMapKeyRef:
-                  name: novachat-config
-                  key: MONGO_URI
+              value: "mongodb://novachat-mongodb-service:27017/novachat"
             - name: CLIENT_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: novachat-config
-                  key: CLIENT_URL
+              value: "http://localhost:3000"
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -53,15 +41,3 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "200m"
-          livenessProbe:
-            httpGet:
-              path: /api/health
-              port: 5000
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /api/health
-              port: 5000
-            initialDelaySeconds: 5
-            periodSeconds: 5

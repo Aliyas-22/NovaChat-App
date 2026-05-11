@@ -4,14 +4,9 @@ metadata:
   name: novachat-config
   namespace: novachat
 data:
-  # Backend config
+  CLIENT_URL: "http://localhost:3000"
+  MONGO_URI: "mongodb://novachat-mongodb-service:27017/novachat"
   NODE_ENV: "production"
   PORT: "5000"
-  CLIENT_URL: "http://novachat-client-service:3000"
-
-  # MongoDB config
-  MONGO_URI: "mongodb://novachat-mongodb-service:27017/novachat"
-
-  # Frontend config
-  REACT_APP_API_URL: "/api"
-  REACT_APP_SOCKET_URL: "/"
+  REACT_APP_API_URL: "http://localhost:5000/api"
+  REACT_APP_SOCKET_URL: "http://localhost:5000"

@@ -19,4 +19,15 @@ Thumbs.db
 
 # Uploads folder
 /server/uploads/*
-!/server/uploads/.gitkeepterraform/terraform.tfvars
+!/server/uploads/.gitkeep
+
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfvars
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+*.tfstate
+*.tfstate.backup
+.terraform/
